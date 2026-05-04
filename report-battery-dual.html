@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>배터리 섹터 — 전기차 & 군용 이중 관점 분석 2026-05-04</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#222;font-size:14px;line-height:1.7}
+  .page{max-width:960px;margin:0 auto;background:#fff;padding:52px}
+  .header{padding-bottom:24px;margin-bottom:32px;border-bottom:3px solid #0f172a}
+  .header .badge-row{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+  .badge{padding:4px 14px;border-radius:4px;font-size:11px;font-weight:700;color:#fff}
+  .badge-ev{background:#3b82f6}
+  .badge-mil{background:#7c3aed}
+  .badge-ess{background:#10b981}
+  .header h1{font-size:26px;font-weight:900;color:#0f172a;line-height:1.3}
+  .header .meta{font-size:12px;color:#94a3b8;margin-top:8px}
+
+  /* Two-column split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}
+  .panel{border-radius:12px;padding:24px;border:2px solid}
+  .panel-ev{border-color:#3b82f6;background:#eff6ff}
+  .panel-mil{border-color:#7c3aed;background:#f5f3ff}
+  .panel-title{font-size:16px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .panel-title.ev{color:#1d4ed8}
+  .panel-title.mil{color:#5b21b6}
+
+  h2{font-size:15px;font-weight:900;color:#0f172a;margin:36px 0 14px;padding-left:12px;border-left:5px solid #0f172a}
+  h2.ev{border-color:#3b82f6}
+  h2.mil{border-color:#7c3aed}
+  h2.both{border-color:#10b981}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+  th{background:#0f172a;color:#fff;padding:11px 14px;text-align:left}
+  td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  tr:hover td{background:#fafafa}
+
+  .alert{padding:14px 20px;border-radius:8px;margin:16px 0;font-size:13px;line-height:1.8}
+  .alert-ev{background:#eff6ff;border-left:5px solid #3b82f6;color:#1e3a5f}
+  .alert-mil{background:#f5f3ff;border-left:5px solid #7c3aed;color:#3b0764}
+  .alert-green{background:#f0fdf4;border-left:5px solid #10b981;color:#14532d}
+  .alert-red{background:#fef2f2;border-left:5px solid #ef4444;color:#7f1d1d}
+
+  .verdict{background:#0f172a;color:#fff;border-radius:12px;padding:24px 30px;margin:24px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .verdict .v-label{font-size:11px;color:#64748b;margin-bottom:6px}
+  .verdict .v-value{font-size:17px;font-weight:900}
+  .verdict .v-sub{font-size:12px;color:#94a3b8;margin-top:4px}
+
+  .stock-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0}
+  .sc{border:1px solid #e2e8f0;border-radius:10px;padding:18px;border-left:5px solid}
+  .sc-ev{border-left-color:#3b82f6}
+  .sc-mil{border-left-color:#7c3aed}
+  .sc .name{font-size:16px;font-weight:900;color:#0f172a;margin-bottom:4px}
+  .sc .code{font-size:11px;color:#94a3b8;margin-bottom:8px}
+  .sc .desc{font-size:12px;color:#475569;line-height:1.6}
+  .sc .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:5px}
+  .tag-sm{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+  .tag-ev{background:#dbeafe;color:#1e40af}
+  .tag-mil{background:#ede9fe;color:#5b21b6}
+  .tag-both{background:#dcfce7;color:#14532d}
+
+  .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+  .tg-item{background:#f8fafc;border-radius:10px;padding:16px;text-align:center;border:1px solid #e2e8f0}
+  .tg-item .yr{font-size:19px;font-weight:900;color:#3b82f6;margin-bottom:8px}
+  .tg-item.mil .yr{color:#7c3aed}
+  .tg-item .ev-txt{font-size:11px;color:#475569;line-height:1.5}
+
+  .footer{margin-top:50px;padding-top:20px;border-top:1px solid #e2e8f0;font-size:11px;color:#94a3b8;text-align:center}
+  @media(max-width:768px){.split,.verdict,.stock-grid,.timeline-grid{grid-template-columns:1fr}.page{padding:28px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="badge-row">
+      <span class="badge badge-ev">🔋 전기차 배터리</span>
+      <span class="badge badge-mil">🛡️ 군용 배터리</span>
+      <span class="badge badge-ess">⚡ ESS 연계</span>
+    </div>
+    <h1>배터리 섹터 이중 관점 분석<br>전기차 캐즘 돌파 × 군용 배터리 성장</h1>
+    <div class="meta">기준일: 2026-05-04 | 프레임워크: 주주총 쥬라기 매트릭스</div>
+  </div>
+
+  <div class="verdict">
+    <div>
+      <div class="v-label">전기차 배터리</div>
+      <div class="v-value" style="color:#60a5fa">🐻 곰 → 공룡 전환</div>
+      <div class="v-sub">B→C 국면. 2026H2 턴어라운드</div>
+    </div>
+    <div>
+      <div class="v-label">군용 배터리</div>
+      <div class="v-value" style="color:#a78bfa">🐱 고양이 → 공룡</div>
+      <div class="v-sub">C→D 국면. 중국 배제 수혜 본격화</div>
+    </div>
+    <div>
+      <div class="v-label">핵심 전략</div>
+      <div class="v-value" style="color:#34d399">투트랙 분리 대응</div>
+      <div class="v-sub">대형주 EV + 소형주 군용 병행</div>
+    </div>
+  </div>
+
+  <!-- Overview split -->
+  <div class="split">
+    <div class="panel panel-ev">
+      <div class="panel-title ev">⚡ 전기차 배터리 현황</div>
+      <ul style="font-size:13px;padding-left:18px;line-height:2">
+        <li>2024~2025 캐즘(Chasm) 통과 중</li>
+        <li>2026 가격 패리티 달성 → 수요 회복 본격화</li>
+        <li>배터리 3사 <strong>2026H2 흑자 전환</strong> 목표</li>
+        <li>ESS로 생산 라인 전환하며 수익성 방어</li>
+        <li>전고체 배터리 2027년 파일럿 양산 개시</li>
+      </ul>
+    </div>
+    <div class="panel panel-mil">
+      <div class="panel-title mil">🛡️ 군용 배터리 현황</div>
+      <ul style="font-size:13px;padding-left:18px;line-height:2">
+        <li>무인 무기(드론·무인차) 전력화 가속</li>
+        <li>미 국방수권법(NDAA) 2027년 <strong>중국산 배터리 퇴출</strong></li>
+        <li>국내 비츠로셀·탈로스 K-방산 동반 성장</li>
+        <li>SK온 → 현대로템 무인차량 배터리 공급 실적</li>
+        <li>고부가가치·진입장벽 높은 고안전성 제품</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EV Section -->
+  <h2 class="ev">⚡ [전기차 배터리] 쥬라기 매트릭스 분석</h2>
+  <table>
+    <tr><th>평가 축</th><th>판정</th><th>근거</th></tr>
+    <tr>
+      <td><strong>재료 연속성</strong></td>
+      <td style="color:#22c55e;font-weight:700">✅ 장기 확실</td>
+      <td>2030년 글로벌 전기차 비율 40%+ 목표. 구조적 성장 트렌드 불변</td>
+    </tr>
+    <tr>
+      <td><strong>펀더멘탈</strong></td>
+      <td style="color:#f97316;font-weight:700">△ 회복 중</td>
+      <td>배터리 3사 상반기 적자·수익성 악화 → 하반기 흑자 전환 가시화</td>
+    </tr>
+    <tr>
+      <td><strong>시장 관심도</strong></td>
+      <td style="color:#ef4444;font-weight:700">❌ 극도 소외</td>
+      <td>전기차 캐즘 프레임에 갇혀 대중의 관심 최저점 → 교과서적 곰섹터 조건</td>
+    </tr>
+  </table>
+
+  <div class="alert alert-ev">
+    <strong>💡 전기차 배터리 핵심 인사이트: "캐즘은 기회다"</strong><br>
+    2026년 배터리 가격이 <strong>kWh당 100달러 이하</strong>로 하락하면 전기차와 내연기관차의 가격 패리티가 달성됩니다. 이 시점이 바로 캐즘의 종료이자 <strong>D 국면 급등의 방아쇠</strong>입니다. 대중이 "배터리는 끝났다"고 할 때 길목을 지키는 전략이 핵심입니다.
+  </div>
+
+  <h2 class="ev">📅 전기차 배터리 반등 로드맵</h2>
+  <div class="timeline-grid">
+    <div class="tg-item">
+      <div class="yr">Q1~Q2</div>
+      <div class="ev-txt">적자 폭 축소<br>바닥 통과 확인<br><strong>매집 최적기</strong></div>
+    </div>
+    <div class="tg-item">
+      <div class="yr">Q3</div>
+      <div class="ev-txt">가격 패리티 달성<br>LG엔솔·삼성SDI<br><strong>흑자 전환</strong></div>
+    </div>
+    <div class="tg-item">
+      <div class="yr">Q4</div>
+      <div class="ev-txt">수요 회복 가시화<br>수주 잔고 급증<br><strong>C→D 전환</strong></div>
+    </div>
+    <div class="tg-item">
+      <div class="yr">2027</div>
+      <div class="ev-txt">전고체 파일럿 양산<br>차세대 배터리 시장<br><strong>D 국면 본격화</strong></div>
+    </div>
+  </div>
+
+  <!-- Military Section -->
+  <h2 class="mil">🛡️ [군용 배터리] 쥬라기 매트릭스 분석</h2>
+  <table>
+    <tr><th>평가 축</th><th>판정</th><th>근거</th></tr>
+    <tr>
+      <td><strong>재료 연속성</strong></td>
+      <td style="color:#22c55e;font-weight:700">✅ 매우 강력</td>
+      <td>드론·무인차·유도무기 확대. 미 NDAA 2027년 중국산 배제로 한국 수혜 확정적</td>
+    </tr>
+    <tr>
+      <td><strong>펀더멘탈</strong></td>
+      <td style="color:#22c55e;font-weight:700">✅ 고부가가치</td>
+      <td>군용 배터리는 EV 대비 단가 3~10배. 비츠로셀·탈로스 실적 성장 확인 중</td>
+    </tr>
+    <tr>
+      <td><strong>시장 관심도</strong></td>
+      <td style="color:#f97316;font-weight:700">△ 상승 중</td>
+      <td>방산 테마와 결합해 재조명. 대형 배터리사의 방산 공급 계약 공시 시 폭발적 관심 예상</td>
+    </tr>
+  </table>
+
+  <div class="alert alert-mil">
+    <strong>💡 군용 배터리 핵심 인사이트: "중국이 빠진 자리를 한국이 채운다"</strong><br>
+    미국 국방수권법(NDAA)에 따라 2027년부터 중국산 배터리는 미국 방산 공급망에서 <strong>완전 퇴출</strong>됩니다. 기술력과 안전성이 검증된 한국 배터리 기업들이 그 자리를 채울 유일한 대안입니다. 이것은 <strong>규제가 만들어주는 완벽한 진입 장벽</strong>입니다.
+  </div>
+
+  <!-- Stock Picks -->
+  <h2 class="both">💎 투트랙 핵심 종목 분류</h2>
+  <div class="stock-grid">
+    <div class="sc sc-ev">
+      <div class="name">LG에너지솔루션</div>
+      <div class="code">373220</div>
+      <div class="desc">북미 ESS 라인 전환으로 수익성 방어. 2026H2 흑자 전환 목표. 전고체 2027 파일럿 개시. 캐즘 극복 후 가장 먼저 치솟을 대장주.</div>
+      <div class="tags"><span class="tag-sm tag-ev">EV 대장</span><span class="tag-sm tag-both">ESS 전환</span><span class="tag-sm tag-ev">전고체</span></div>
+    </div>
+    <div class="sc sc-ev">
+      <div class="name">삼성SDI</div>
+      <div class="code">006400</div>
+      <div class="desc">독일 프리미엄 완성차 수주 + ESS 호조. 2026 Q1 순이익 흑자 전환 성공. 선별 수주·내실 경영으로 체질 개선. 수익성 측면에서 3사 중 가장 안정적.</div>
+      <div class="tags"><span class="tag-sm tag-ev">프리미엄 EV</span><span class="tag-sm tag-both">ESS</span><span class="tag-sm tag-ev">흑자전환</span></div>
+    </div>
+    <div class="sc sc-mil">
+      <div class="name">비츠로셀</div>
+      <div class="code">082920</div>
+      <div class="desc">군용 일차전지(리튬염화티오닐) 국내 1위. 드론·유도무기·무전기 필수 부품 공급. 오랜 실전 검증 데이터 보유. K-방산 수출 확대와 직접 연동.</div>
+      <div class="tags"><span class="tag-sm tag-mil">군용 특수전지</span><span class="tag-sm tag-mil">드론 배터리</span><span class="tag-sm tag-mil">K-방산</span></div>
+    </div>
+    <div class="sc sc-mil">
+      <div class="name">탈로스</div>
+      <div class="code">비상장 주목</div>
+      <div class="desc">천궁-2·TICN 등 핵심 유도무기 배터리 팩 공급. 수중 체계용 특수 배터리 강점. 비상장이나 IPO 추진 시 섹터 최대 이슈. 관련 투자사 지분 보유 종목 탐색 필요.</div>
+      <div class="tags"><span class="tag-sm tag-mil">천궁-2 수혜</span><span class="tag-sm tag-mil">수중 배터리</span><span class="tag-sm tag-mil">IPO 대기</span></div>
+    </div>
+    <div class="sc sc-ev">
+      <div class="name">SK온 (SK이노베이션)</div>
+      <div class="code">096770</div>
+      <div class="desc">현대로템 무인차량 배터리 공급 실적 보유 → 군용 포트폴리오 진입. ESS 전환 및 재무 구조 개선 중. 리스크 높으나 회복 시 폭발력 가장 큰 종목.</div>
+      <div class="tags"><span class="tag-sm tag-ev">EV+군용</span><span class="tag-sm tag-mil">무인차 배터리</span><span class="tag-sm tag-both">턴어라운드</span></div>
+    </div>
+    <div class="sc sc-mil">
+      <div class="name">한화에어로스페이스</div>
+      <div class="code">012450</div>
+      <div class="desc">군용 드론 시스템 + 유도무기 통합 솔루션 수혜. 배터리 수요처이자 직접 공급망 통합자. 방산 대장주로서 군용 배터리 섹터 상승 시 동반 수혜 확실.</div>
+      <div class="tags"><span class="tag-sm tag-mil">방산 대장</span><span class="tag-sm tag-mil">드론 시스템</span><span class="tag-sm tag-mil">배터리 수요처</span></div>
+    </div>
+  </div>
+
+  <!-- Strategy -->
+  <h2 class="both">📌 투트랙 매매 전략 요약</h2>
+  <table>
+    <tr><th>구분</th><th>진입 타이밍</th><th>포지션 비중</th><th>청산 기준</th></tr>
+    <tr>
+      <td><strong style="color:#1d4ed8">전기차 배터리</strong></td>
+      <td>배터리 3사 Q2 실적 확인 후<br>(적자 축소 or 흑자 전환)</td>
+      <td>포트폴리오의 40%<br>(LG엔솔 위주)</td>
+      <td>가격 패리티 달성 공식화 시<br>분할 청산 시작</td>
+    </tr>
+    <tr>
+      <td><strong style="color:#5b21b6">군용 배터리</strong></td>
+      <td>비츠로셀 수주 공시 or<br>NDAA 중국 배제 시행 확인</td>
+      <td>포트폴리오의 20%<br>(비츠로셀 + 대형사)</td>
+      <td>방산 수출 계약 단가 상승<br>확인 후 D 국면에서 청산</td>
+    </tr>
+  </table>
+
+  <div class="alert alert-green">
+    <strong>🎯 주주총 최종 인사이트</strong><br>
+    배터리 섹터는 <strong>하나의 종목이 아니라 두 개의 다른 게임</strong>이 진행 중입니다.<br>
+    전기차 배터리는 <strong>"캐즘을 버틴 자가 이긴다"</strong>는 인내의 곰섹터이고,<br>
+    군용 배터리는 <strong>"중국이 만들어준 기회를 가로채라"</strong>는 역발상 고양이 섹터입니다.<br>
+    두 전략을 비중 차이를 두고 병행하는 것이 2026년 배터리 섹터 최적 포트폴리오입니다.
+  </div>
+
+  <div class="footer">
+    주주총 2026 투자 전략 시스템 | 배터리 섹터 이중 관점 분석 | 생성: 2026-05-04<br>
+    ⚠️ 본 리포트는 투자 참고용입니다. 최종 결정은 본인의 판단과 책임하에 이루어져야 합니다.
+  </div>
+</div>
+</body>
+</html>

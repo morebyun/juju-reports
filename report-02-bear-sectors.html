@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주주총 쥬라기 매트릭스 — 곰섹터 발굴 리포트 (2026-05-04)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#222;font-size:14px;line-height:1.6}
+  .page{max-width:1000px;margin:40px auto;background:#fff;padding:60px;box-shadow:0 10px 30px rgba(0,0,0,0.05);border-radius:12px}
+  .header{border-bottom:4px solid #1a1a2e;padding-bottom:24px;margin-bottom:40px;position:relative}
+  .header h1{font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px}
+  .header .meta{font-size:13px;color:#666;margin-top:10px;display:flex;gap:20px;align-items:center}
+  .badge-main{background:#1a1a2e;color:#fff;padding:4px 12px;border-radius:4px;font-weight:700;font-size:12px}
+  
+  .section-title{font-size:18px;font-weight:900;color:#1a1a2e;margin:40px 0 20px;display:flex;align-items:center;gap:10px}
+  .section-title::before{content:'';display:block;width:6px;height:24px;background:#27ae60;border-radius:3px}
+  
+  .summary-card{background:#f8f9fa;border-radius:10px;padding:24px;margin-bottom:30px;border-left:6px solid #1a1a2e}
+  .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .summary-item .label{font-size:12px;color:#888;margin-bottom:4px}
+  .summary-item .value{font-size:15px;font-weight:700;color:#333}
+
+  table{width:100%;border-collapse:collapse;margin:20px 0;background:#fff}
+  th{background:#1a1a2e;color:#fff;padding:12px 15px;text-align:left;font-size:13px;font-weight:500}
+  td{padding:12px 15px;border-bottom:1px solid #eee;font-size:13px}
+  tr:hover td{background:#fdfdfd}
+  .center{text-align:center}
+  
+  .sector-box{border:1px solid #e0e0e0;border-radius:12px;padding:30px;margin-bottom:30px;transition:transform 0.2s}
+  .sector-box:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.05)}
+  .sector-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .sector-name{font-size:20px;font-weight:900;color:#1a1a2e}
+  .phase-tag{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700}
+  .phase-bc{background:#e8f4fd;color:#2980b9}
+  .phase-c{background:#fef9e7;color:#f39c12}
+  .phase-a{background:#eafaf1;color:#27ae60}
+  
+  .strategy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:20px}
+  .strategy-card{background:#f8f9fa;padding:15px;border-radius:8px}
+  .strategy-card .title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;margin-bottom:5px}
+  .strategy-card .content{font-size:13px;color:#444}
+
+  .top-list-table th{background:#27ae60}
+  .rank-badge{display:inline-block;width:24px;height:24px;background:#27ae60;color:#fff;text-align:center;line-height:24px;border-radius:50%;font-weight:900;font-size:14px}
+  
+  .stance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+  .stance-card{background:#1a1a2e;color:#fff;padding:20px;border-radius:10px;text-align:center}
+  .stance-card .name{font-size:13px;font-weight:700;margin-bottom:10px;color:#27ae60}
+  .stance-card .method{font-size:16px;font-weight:900;margin-bottom:5px}
+  .stance-card .msg{font-size:11px;color:#aaa}
+
+  .alert{padding:15px 20px;border-radius:8px;margin:20px 0;font-size:13px}
+  .alert-info{background:#e8f4fd;border-left:4px solid #2980b9;color:#2980b9}
+  .alert-warning{background:#fdf0f0;border-left:4px solid #e74c3c;color:#c0392b}
+
+  .footer{margin-top:60px;padding-top:30px;border-top:1px solid #eee;font-size:12px;color:#999;text-align:center}
+  
+  @media (max-width: 768px){
+    .page{padding:30px}
+    .summary-grid, .strategy-grid, .stance-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="badge-main">STRATEGIC SECTOR REPORT</div>
+    <h1>🐻 주주총 쥬라기 매트릭스 — 곰섹터 발굴 리포트</h1>
+    <div class="meta">
+      <span><strong>기준일:</strong> 2026-05-04</span>
+      <span><strong>데이터:</strong> NotebookLM (122개 소스 분석)</span>
+      <span><strong>작성:</strong> AI 쥬라기 매트릭스 시스템</span>
+    </div>
+  </div>
+
+  <div class="summary-card">
+    <div class="section-title" style="margin-top:0">노트북 분석 개요</div>
+    <div class="summary-grid">
+      <div class="summary-item"><div class="label">분석 대상</div><div class="value">데일리 산업 및 증시 테마 동향</div></div>
+      <div class="summary-item"><div class="label">데이터 기간</div><div class="value">2025.11.13 ~ 2026.04.30</div></div>
+      <div class="summary-item"><div class="label">핵심 키워드</div><div class="value">AI 인프라, 반도체, K-뷰티, 밸류업</div></div>
+    </div>
+  </div>
+
+  <div class="section-title">🦕 [1단계] 쥬라기 매트릭스 종합 평가</div>
+  <table>
+    <thead>
+      <tr>
+        <th>섹터명</th>
+        <th class="center">재료 연속성</th>
+        <th class="center">펀더멘탈(실체)</th>
+        <th class="center">시장 관심도</th>
+        <th class="center">최종 분류</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>미용/의료기기 (K-뷰티)</strong></td>
+        <td class="center" style="color:#27ae60">✅</td>
+        <td class="center" style="color:#27ae60">✅</td>
+        <td class="center" style="color:#f39c12">△</td>
+        <td class="center"><strong>🐻 곰</strong></td>
+      </tr>
+      <tr>
+        <td><strong>석유화학 (NCC 구조조정)</strong></td>
+        <td class="center" style="color:#27ae60">✅</td>
+        <td class="center" style="color:#27ae60">✅ (바닥)</td>
+        <td class="center" style="color:#e74c3c">❌</td>
+        <td class="center"><strong>🐻 곰</strong></td>
+      </tr>
+      <tr>
+        <td><strong>지주사 (밸류업/환원)</strong></td>
+        <td class="center" style="color:#27ae60">✅</td>
+        <td class="center" style="color:#27ae60">✅</td>
+        <td class="center" style="color:#f39c12">△</td>
+        <td class="center"><strong>🐻 곰</strong></td>
+      </tr>
+      <tr>
+        <td><strong>엔터테인먼트 (BTS 컴백)</strong></td>
+        <td class="center" style="color:#27ae60">✅</td>
+        <td class="center" style="color:#27ae60">✅</td>
+        <td class="center" style="color:#f39c12">△</td>
+        <td class="center"><strong>🐻 곰</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">🐻 [2단계] 섹터별 곰섹터 상세 분석</div>
+
+  <!-- Sector 1 -->
+  <div class="sector-box">
+    <div class="sector-header">
+      <div class="sector-name">🧴 미용/의료기기 — 2026 수출 주도형</div>
+      <div class="phase-tag phase-bc">B~C 국면 (모아가기 최적)</div>
+    </div>
+    <div class="content">
+      에이피알, 파마리서치, 클래시스 등 실제 수익을 창출하는 기업들이 포진해 있습니다. 2026년 가이던스 반영 전인 현재가 대중 소외 구간이자 최적의 진입기입니다.
+    </div>
+    <div class="strategy-grid">
+      <div class="strategy-card"><div class="title">진입 전략</div><div class="content">분기 실적 발표 전 선취매. 밸류에이션 조정 국면 이용</div></div>
+      <div class="strategy-card"><div class="title">청산 전략</div><div class="content">D 국면 급등 초입에서 50~70% 비중 축소</div></div>
+    </div>
+  </div>
+
+  <!-- Sector 2 -->
+  <div class="sector-box">
+    <div class="sector-header">
+      <div class="sector-name">🏭 석유화학 — 역발상의 정수</div>
+      <div class="phase-tag phase-c">C 국면 (바닥 횡보 인내)</div>
+    </div>
+    <div class="content">
+      PBR 0.4배라는 역대 최저 수준의 저평가 구간입니다. 업황 부진으로 시장에서 완전히 소외되어 있으나, 구조조정과 중국 부양책이 맞물리며 바닥을 통과하고 있습니다.
+    </div>
+    <div class="strategy-grid">
+      <div class="strategy-card"><div class="title">추천 종목</div><div class="content">LG화학(1순위), 롯데케미칼</div></div>
+      <div class="strategy-card"><div class="title">핵심 메시지</div><div class="content">자산 가치 대비 극심한 저평가. 길목 지키기의 정석</div></div>
+    </div>
+  </div>
+
+  <!-- Sector 3 -->
+  <div class="sector-box">
+    <div class="sector-header">
+      <div class="sector-name">🏢 지주사 — 정책 리레이팅 대기</div>
+      <div class="phase-tag phase-a">A 국면 진입 전</div>
+    </div>
+    <div class="content">
+      상법 개정과 자사주 소각 의무화 등 강력한 정책 트리거가 대기 중입니다. 배당소득 분리과세 제도 시행 시 본격적인 밸류업 리레이팅이 예상됩니다.
+    </div>
+    <div class="strategy-grid">
+      <div class="strategy-card"><div class="title">추천 종목</div><div class="content">두산, SK스퀘어, 한화비전, 일진홀딩스</div></div>
+      <div class="strategy-card"><div class="title">매매 기법</div><div class="content">바닥권 횡보 구간에서 비중 확대 후 리레이팅 향유</div></div>
+    </div>
+  </div>
+
+  <!-- Sector 4 -->
+  <div class="sector-box">
+    <div class="sector-header">
+      <div class="sector-name">🎶 엔터테인먼트 — 모멘텀 피날레 대기</div>
+      <div class="phase-tag phase-a">A 국면 (성장 진입)</div>
+    </div>
+    <div class="content">
+      BTS 2026년 2월 컴백 및 4월 월드투어 확정으로 실적 가시성이 매우 높습니다. 역사적 하단에서 이미 새로운 성장 구간으로 고개를 들고 있습니다.
+    </div>
+    <div class="strategy-grid">
+      <div class="strategy-card"><div class="title">추천 종목</div><div class="content">하이브(HYBE), JYP Ent., SM</div></div>
+      <div class="strategy-card"><div class="title">주의 사항</div><div class="content">이미 A 국면 진입 중이므로 과도한 비중보다는 일정 추종 매매</div></div>
+    </div>
+  </div>
+
+  <div class="section-title">🚀 [3단계] 2026 상반기 곰섹터 TOP 5</div>
+  <table class="top-list-table">
+    <thead>
+      <tr>
+        <th class="center" style="width:60px">순위</th>
+        <th>종목명</th>
+        <th>섹터</th>
+        <th class="center">생애주기</th>
+        <th>핵심 카탈리스트</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center"><span class="rank-badge">1</span></td>
+        <td><strong>LG화학</strong></td>
+        <td>석유화학</td>
+        <td class="center">C 국면</td>
+        <td>NCC 구조조정, PBR 0.4배 극저평가</td>
+      </tr>
+      <tr>
+        <td class="center"><span class="rank-badge">2</span></td>
+        <td><strong>파마리서치</strong></td>
+        <td>미용기기</td>
+        <td class="center">B~C 국면</td>
+        <td>스킨부스터 신제품, 방한 관광 수요</td>
+      </tr>
+      <tr>
+        <td class="center"><span class="rank-badge">3</span></td>
+        <td><strong>두산</strong></td>
+        <td>지주사</td>
+        <td class="center">A 전환</td>
+        <td>지배구조 개편, 상법 개정 트리거</td>
+      </tr>
+      <tr>
+        <td class="center"><span class="rank-badge">4</span></td>
+        <td><strong>하이브</strong></td>
+        <td>엔터</td>
+        <td class="center">A 국면</td>
+        <td>BTS 완전체 컴백 + 월드투어</td>
+      </tr>
+      <tr>
+        <td class="center"><span class="rank-badge">5</span></td>
+        <td><strong>롯데케미칼</strong></td>
+        <td>석유화학</td>
+        <td class="center">C 국면</td>
+        <td>업황 사이클 턴어라운드 초입</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">📌 섹터별 매매 스탠스 요약</div>
+  <div class="stance-grid">
+    <div class="stance-card">
+      <div class="name">미용기기</div>
+      <div class="method">모아가기</div>
+      <div class="msg">실적 기반 분할 매수</div>
+    </div>
+    <div class="stance-card">
+      <div class="name">석유화학</div>
+      <div class="method">역발상</div>
+      <div class="msg">바닥권 길목 지키기</div>
+    </div>
+    <div class="stance-card">
+      <div class="name">지주사</div>
+      <div class="method">비중 확대</div>
+      <div class="msg">정책 리레이팅 향유</div>
+    </div>
+    <div class="stance-card" style="background:#27ae60">
+      <div class="name" style="color:#fff">엔터</div>
+      <div class="method">추세추종</div>
+      <div class="msg">A 국면 선제적 대응</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warning">
+    <strong>⚠️ 투자 주의사항:</strong> 본 리포트는 NotebookLM을 통한 대량의 뉴스 데이터를 주주총 쥬라기 매트릭스 프레임워크로 재해석한 결과물입니다. 거시 경제 환경 변화에 따라 섹터별 국면 전환 속도가 달라질 수 있으므로 반드시 분할 매수와 철저한 리스크 관리를 병행하시기 바랍니다.
+  </div>
+
+  <div class="footer">
+    주주총 2026 투자 전략 시스템 | "길목을 지키는 곰섹터가 가장 큰 수익을 줍니다."<br>
+    Report Generated at 2026-05-04 07:35:00
+  </div>
+</div>
+</body>
+</html>

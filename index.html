@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주주총 2026 투자 전략 대시보드</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+  
+  :root {
+    --bg-color: #f1f5f9;
+    --text-color: #1e293b;
+    --card-bg: #ffffff;
+    --primary: #3b82f6;
+    --secondary: #64748b;
+    --border: #e2e8f0;
+    
+    --dino-color: #f59e0b;
+    --bear-color: #10b981;
+    --cat-color: #8b5cf6;
+    --mix-color: #ef4444;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+  
+  .dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .header h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+  
+  .header p {
+    font-size: 15px;
+    color: var(--secondary);
+  }
+  
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-top: 4px solid var(--primary);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Category colors */
+  .card.dino { border-top-color: var(--dino-color); }
+  .card.bear { border-top-color: var(--bear-color); }
+  .card.cat { border-top-color: var(--cat-color); }
+  .card.mix { border-top-color: var(--mix-color); }
+  .card.general { border-top-color: #0f172a; }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.4;
+  }
+  
+  .badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    color: white;
+  }
+  
+  .badge.dino { background-color: var(--dino-color); }
+  .badge.bear { background-color: var(--bear-color); }
+  .badge.cat { background-color: var(--cat-color); }
+  .badge.mix { background-color: var(--mix-color); }
+  .badge.general { background-color: #475569; }
+  
+  .card-desc {
+    font-size: 13px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 12px;
+    color: #94a3b8;
+  }
+  
+  .view-btn {
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .card:hover .view-btn {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="dashboard-container">
+  <div class="header">
+    <h1>📈 주주총 2026 투자 전략 대시보드</h1>
+    <p>쥬라기 매트릭스 기반 섹터 및 종목 심층 분석 리포트 모음</p>
+  </div>
+
+  <h2 class="section-title">🏢 통합 및 전략 리포트</h2>
+  <div class="grid-container">
+    <a href="report-01-promising-sectors.html" class="card general" target="_blank">
+      <div class="card-header">
+        <div class="card-title">2026 유망섹터 쥬라기 분석 요약</div>
+        <span class="badge general">통합</span>
+      </div>
+      <div class="card-desc">로봇, 배터리, 원자력 등 시장 주도 섹터에 대한 전반적인 쥬라기 매트릭스 요약 보고서입니다.</div>
+      <div class="card-footer">
+        <span>2026-05-04</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-02-bear-sectors.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">역발상 곰섹터 발굴 통합 리포트</div>
+        <span class="badge bear">🐻 곰 집중</span>
+      </div>
+      <div class="card-desc">시장 소외 구간에서 펀더멘탈 턴어라운드를 준비하는 미용, 바이오, 엔터 곰섹터 집중 발굴 보고서입니다.</div>
+      <div class="card-footer">
+        <span>2026-05-04</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+  </div>
+
+  <h2 class="section-title">🔍 산업 섹터 마스터 리포트 (Deep Dive)</h2>
+  <div class="grid-container">
+    <a href="report-beauty-medical.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">미용 의료기기 섹터 마스터</div>
+        <span class="badge bear">🐻 곰</span>
+      </div>
+      <div class="card-desc">클래시스, 휴젤 등 K-뷰티 장비 수출 호조와 50%대 소모품 수익 모델을 기반으로 한 최우량 곰섹터 전략.</div>
+      <div class="card-footer">
+        <span>C 국면 모아가기</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-nuclear-energy.html" class="card dino" target="_blank">
+      <div class="card-header">
+        <div class="card-title">원자력 & 에너지 섹터</div>
+        <span class="badge dino">🦖 공룡</span>
+      </div>
+      <div class="card-desc">AI 전력 수요 폭증과 대형 원전 수주, SMR 상용화 모멘텀을 보유한 시장 주도주 섹터 심층 분석.</div>
+      <div class="card-footer">
+        <span>A~D 순환 국면</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-defense-drone.html" class="card mix" target="_blank">
+      <div class="card-header">
+        <div class="card-title">방산 & 드론 섹터</div>
+        <span class="badge mix">🦖 공룡 / 🐱 고양이</span>
+      </div>
+      <div class="card-desc">K-방산의 거대한 실적 잔고(공룡)와 미 국방부 무인기 프로젝트(고양이)를 결합한 투트랙 전략 리포트.</div>
+      <div class="card-footer">
+        <span>D / A 국면</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-hyundai-robotics.html" class="card cat" target="_blank">
+      <div class="card-header">
+        <div class="card-title">현대차 로봇 밸류체인 생태계</div>
+        <span class="badge cat">🐱 고양이 → 🦖 공룡</span>
+      </div>
+      <div class="card-desc">아틀라스 2028년 공장 투입에 대비한 현대모비스 등 현대차그룹 내 로봇 부품 공급망 및 티어별 집중 분석.</div>
+      <div class="card-footer">
+        <span>C 국면 전환기</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-robotics.html" class="card cat" target="_blank">
+      <div class="card-header">
+        <div class="card-title">로봇 및 노동 대체 섹터</div>
+        <span class="badge cat">🐱 고양이</span>
+      </div>
+      <div class="card-desc">인구 구조 변화와 임금 인상에 따른 구조적 자동화 수요. 협동로봇 및 휴머노이드 관련주 전반 분석.</div>
+      <div class="card-footer">
+        <span>C 국면 추세형성</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-battery-dual.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">배터리: 전기차 & 군용 이중 분석</div>
+        <span class="badge mix">🐻 전기차 / 🐱 군용</span>
+      </div>
+      <div class="card-desc">전기차 캐즘 극복 시나리오와 미국 국방수권법(NDAA)발 군용 특수 배터리(비츠로셀 등) 수혜를 분리하여 분석.</div>
+      <div class="card-footer">
+        <span>투트랙 대응 전략</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-battery-ess.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">배터리 & ESS 마스터</div>
+        <span class="badge bear">🐻 곰</span>
+      </div>
+      <div class="card-desc">전기차 정체기를 넘어 ESS 전력 수요 폭발로 수익성을 회복하는 대형 3사 및 나트륨 배터리 밸류체인 분석.</div>
+      <div class="card-footer">
+        <span>B→C 바닥다지기</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="report-rare-earth.html" class="card cat" target="_blank">
+      <div class="card-header">
+        <div class="card-title">희토류 자원 재활용 섹터</div>
+        <span class="badge cat">🐱 고양이</span>
+      </div>
+      <div class="card-desc">공급망 분절화 속 자원 안보의 핵심으로 떠오른 폐배터리 및 도시 광산 기업들의 가치 재발견.</div>
+      <div class="card-footer">
+        <span>C 국면 바닥탈출</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+  </div>
+
+  <h2 class="section-title">📊 개별 종목 심층 분석</h2>
+  <div class="grid-container">
+    <a href="stock-korea-zinc.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">고려아연 (010130)</div>
+        <span class="badge bear">🐻 곰 대장</span>
+      </div>
+      <div class="card-desc">경영권 분쟁 노이즈 소멸 후 부각되는 '2조 원 영업이익'의 압도적 펀더멘탈. 전형적인 B→C 국면 우량주.</div>
+      <div class="card-footer">
+        <span>역발상 길목지키기</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="stock-classys.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">클래시스 (214150)</div>
+        <span class="badge bear">🐻 곰 우량주</span>
+      </div>
+      <div class="card-desc">블록딜 악재를 이겨내는 영업이익률 50%의 압도적 수익성과 글로벌 수출 모멘텀 기반 곰섹터 공략.</div>
+      <div class="card-footer">
+        <span>펀더멘탈 기반 모아가기</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="stock-pharmaresearch.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">파마리서치 (214450)</div>
+        <span class="badge bear">🐻 곰 우량주</span>
+      </div>
+      <div class="card-desc">PDRN 기반 제품군의 견조한 성장과 40%대 높은 이익률. 단기 조정 구간에서 매집 가능한 뷰티/바이오 곰섹터.</div>
+      <div class="card-footer">
+        <span>안정적 실적 방어주</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+
+    <a href="stock-hybe.html" class="card bear" target="_blank">
+      <div class="card-header">
+        <div class="card-title">하이브 (352820)</div>
+        <span class="badge bear">🐻 곰 턴어라운드</span>
+      </div>
+      <div class="card-desc">멀티 레이블 리스크 선반영 및 뉴진스 복귀 기대감에 기반한 엔터 곰섹터의 실적 턴어라운드 베팅.</div>
+      <div class="card-footer">
+        <span>악재 소멸 후 반등 노림</span>
+        <span class="view-btn">리포트 보기 →</span>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
