@@ -2,255 +2,145 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>휴젤 쥬라기 분석 리포트 2026-05-06</title>
+<title>휴젤 주주총 섹터 분석 리포트 2026-05-06</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Noto Sans KR',sans-serif;background:#f0f2f5;color:#222;font-size:14px;line-height:1.7}
-  .page{max-width:950px;margin:0 auto;background:#fff;padding:52px;border-top:10px solid #8b5cf6}
-  
-  /* Header */
-  .header{margin-bottom:36px;border-bottom:2px solid #e2e8f0;padding-bottom:24px}
-  .header .tag{background:#8b5cf6;color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:4px;display:inline-block;margin-bottom:12px}
-  .header h1{font-size:26px;font-weight:900;color:#0f172a;line-height:1.3;margin-bottom:10px}
-  .header .meta{font-size:12px;color:#94a3b8}
-
-  /* Verdict Block */
-  .verdict{background:#0f172a;border-radius:12px;padding:24px 30px;margin:28px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-  .verdict-item .v-label{font-size:11px;color:#64748b;margin-bottom:6px}
-  .verdict-item .v-value{font-size:18px;font-weight:900;color:#fff}
-  .verdict-item .v-sub{font-size:12px;color:#94a3b8;margin-top:4px}
-
-  /* Sections */
-  h2{font-size:15px;font-weight:900;color:#0f172a;margin:36px 0 14px;padding-left:12px;border-left:5px solid #8b5cf6}
-  h3{font-size:13px;font-weight:700;color:#334155;margin:18px 0 8px}
-
-  /* Tables */
-  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
-  th{background:#0f172a;color:#fff;padding:11px 14px;text-align:left;font-weight:600}
-  td{padding:10px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
-  tr:hover td{background:#f8fafc}
-  .center{text-align:center}
-
-  /* Alerts */
-  .alert{padding:16px 20px;border-radius:8px;margin:16px 0;font-size:13px;line-height:1.8}
-  .alert-purple{background:#f3e8ff;border-left:5px solid #8b5cf6;color:#4c1d95}
-  .alert-blue{background:#eff6ff;border-left:5px solid #3b82f6;color:#1e3a5f}
-  .alert-green{background:#f0fdf4;border-left:5px solid #22c55e;color:#14532d}
-  .alert-yellow{background:#fefce8;border-left:5px solid #eab308;color:#713f12}
-  .alert-red{background:#fef2f2;border-left:5px solid #ef4444;color:#7f1d1d}
-
-  /* Roadmap */
-  .roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
-  .roadmap-step{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px;text-align:center}
-  .roadmap-step .year{font-size:20px;font-weight:900;color:#8b5cf6;margin-bottom:8px}
-  .roadmap-step .event{font-size:12px;color:#475569;line-height:1.5}
-
-  /* Stock Cards */
-  .stock-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:18px 0}
-  .stock-card{border:1px solid #e2e8f0;border-radius:12px;padding:20px;position:relative;overflow:hidden}
-  .stock-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%}
-  .tier-1::before{background:#8b5cf6}
-  .stock-card .s-tier{font-size:10px;font-weight:700;color:#94a3b8;margin-bottom:4px;letter-spacing:0.05em}
-  .stock-card .s-name{font-size:17px;font-weight:900;color:#0f172a;margin-bottom:6px}
-  .stock-card .s-code{font-size:11px;color:#8b5cf6;font-weight:700;margin-bottom:10px}
-  .stock-card .s-reason{font-size:12px;color:#475569;line-height:1.6}
-  .stock-card .s-keyword{margin-top:10px;display:flex;flex-wrap:wrap;gap:5px}
-  .kw{background:#f3e8ff;color:#6d28d9;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
-  .kw-green{background:#dcfce7;color:#166534}
-
-  /* Strategy table */
-  .strategy-box{background:#f8fafc;border-radius:10px;padding:24px;margin:18px 0}
-  .strategy-box .s-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:14px}
-
-  .footer{margin-top:50px;padding-top:20px;border-top:1px solid #e2e8f0;font-size:11px;color:#94a3b8;text-align:center}
-  @media(max-width:768px){.verdict{grid-template-columns:1fr}.roadmap{grid-template-columns:repeat(2,1fr)}.stock-grid{grid-template-columns:1fr}.page{padding:28px}}
+  body{font-family:'Noto Sans KR',sans-serif;background:#f5f6fa;color:#222;font-size:14px}
+  .page{max-width:900px;margin:0 auto;background:#fff;padding:48px}
+  .header{border-bottom:3px solid #1a1a2e;padding-bottom:20px;margin-bottom:32px}
+  .header h1{font-size:24px;font-weight:900;color:#1a1a2e}
+  .header .sub{font-size:12px;color:#666;margin-top:6px}
+  .badge{display:inline-block;background:#8b5cf6;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:10px;vertical-align:middle}
+  h2{font-size:15px;font-weight:700;color:#1a1a2e;margin:28px 0 12px;border-left:4px solid #8b5cf6;padding-left:10px}
+  h3{font-size:13px;font-weight:700;color:#333;margin:16px 0 8px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+  th{background:#1a1a2e;color:#fff;padding:9px 12px;text-align:left}
+  td{padding:8px 12px;border-bottom:1px solid #e8e8e8}
+  tr:nth-child(even) td{background:#f9f9f9}
+  .alert{padding:14px 18px;border-radius:8px;margin:16px 0;font-size:13px;line-height:1.7}
+  .alert-purple{background:#f3e8ff;border-left:4px solid #8b5cf6;color:#4c1d95}
+  .alert-green{background:#f0fff4;border-left:4px solid #27ae60;color:#1e8449}
+  .alert-yellow{background:#fefce8;border-left:4px solid #f39c12;color:#7d6608}
+  .alert-red{background:#fdf0f0;border-left:4px solid #e74c3c;color:#c0392b}
+  .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+  .metric-card{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:14px;text-align:center}
+  .metric-card .label{font-size:11px;color:#888;margin-bottom:6px}
+  .metric-card .value{font-size:18px;font-weight:900}
+  .metric-card .value.red{color:#e74c3c}
+  .metric-card .value.green{color:#27ae60}
+  .metric-card .value.purple{color:#8b5cf6}
+  .metric-card .value.orange{color:#e67e22}
+  .verdict{background:#1a1a2e;color:#fff;border-radius:10px;padding:20px 24px;margin:24px 0}
+  .verdict .title{font-size:12px;color:#aaa;margin-bottom:8px}
+  .verdict .main{font-size:22px;font-weight:900}
+  .verdict .sub{font-size:13px;color:#ccc;margin-top:6px}
+  .timeline{margin:12px 0}
+  .timeline-item{display:flex;gap:14px;margin-bottom:10px;align-items:flex-start}
+  .timeline-dot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex-shrink:0}
+  .dot-red{background:#e74c3c}
+  .dot-gray{background:#aaa}
+  .dot-green{background:#27ae60}
+  .dot-blue{background:#2980b9}
+  .condition-box{background:#f3e8ff;border:1px solid #c4b5fd;border-radius:8px;padding:14px 18px;margin:12px 0}
+  .condition-box li{margin:5px 0 5px 18px;font-size:13px;line-height:1.6}
+  .footer{margin-top:40px;padding-top:16px;border-top:1px solid #ddd;font-size:11px;color:#999;text-align:center}
 </style>
 </head>
 <body>
 <div class="page">
-
-  <!-- Header -->
+  <a href="index.html" style="display:inline-block; margin-bottom: 20px; padding: 10px 20px; background: #8b5cf6; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 14px; box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);">← 대시보드로 돌아가기</a>
   <div class="header">
-    <div class="tag">🐻 BEAUTY MEDICAL SECTOR — 휴젤(145020) 집중 분석</div>
-    <h1>휴젤(Hugel) 톡신·필러 생태계<br>쥬라기 매트릭스 심층 리포트</h1>
-    <div class="meta">기준일: 2026-05-06 &nbsp;|&nbsp; 프레임워크: 주주총 쥬라기 매트릭스 &nbsp;|&nbsp; 데이터: 기업공시 + 증권사 컨센서스 + 차트 분석</div>
+    <h1>🦕 주주총 섹터 분석 리포트 — 휴젤 (145020) <span class="badge">🐻 곰섹터 우량주</span></h1>
+    <div class="sub">기준일: 2026-05-06 &nbsp;|&nbsp; 프레임워크: 주주총 쥬라기 매트릭스 &nbsp;|&nbsp; 데이터: 기업공시·증권사 컨센서스·차트</div>
   </div>
 
-  <!-- Verdict -->
   <div class="verdict">
-    <div class="verdict-item">
-      <div class="v-label">쥬라기 분류</div>
-      <div class="v-value">🐻 곰 (안정적 현금창출)</div>
-      <div class="v-sub">압도적 이익률 (OPM 50%+) 기반 우량주</div>
-    </div>
-    <div class="verdict-item">
-      <div class="v-label">현재 국면</div>
-      <div class="v-value">D 국면 (실적 고도화기)</div>
-      <div class="v-sub">북미/중국 직판 성과 가시화 구간</div>
-    </div>
-    <div class="verdict-item">
-      <div class="v-label">핵심 투자 전략</div>
-      <div class="v-value">조정 시 지속 Accumulate</div>
-      <div class="v-sub">중장기 상승 추세 편승 전략</div>
-    </div>
+    <div class="title">쥬라기 매트릭스 최종 분류</div>
+    <div class="main">🐻 곰 섹터 / C 국면 (추세 전환 및 반등기)</div>
+    <div class="sub">압도적 이익률(OPM 51%+) 기반 북미 직판 가시화 + 과매도 진정 후 반등 국면</div>
   </div>
 
-  <!-- Why Hugel -->
-  <h2>🔥 왜 지금 휴젤인가?</h2>
-  <div class="alert alert-purple">
-    <strong>핵심 인사이트: "글로벌 미용 의료 시장의 확고한 Cash Cow, 그리고 북미 직판 성공 스토리"</strong><br>
-    보툴리눔 톡신 '보툴렉스'와 HA필러 '더채움'을 주력으로 하는 휴젤은 25년 2분기 영업이익률 51.4%를 기록할 정도로 압도적인 수익성을 자랑합니다.
-    단순한 내수 기업을 넘어 <strong>미국 보툴리눔 톡신 시장 매출 확대</strong>와 브라질 등 신흥국 선적이 본격화되며 
-    2028년 매출 9,000억 원 달성이라는 구체적인 목표를 향해 순항 중입니다. 최근 세포외기질(ECM) 기반 스킨부스터 
-    '셀르디엠' 분배 계약을 통한 포트폴리오 다각화도 긍정적입니다.
+  <h2>📊 핵심 재무 및 투자 지표</h2>
+  <div class="metric-grid">
+    <div class="metric-card"><div class="label">25Q4 매출</div><div class="value green">1,191억</div><div style="font-size:11px;color:#27ae60;margin-top:4px">YoY +21.3%</div></div>
+    <div class="metric-card"><div class="label">25Q4 영업이익</div><div class="value green">586억</div><div style="font-size:11px;color:#27ae60;margin-top:4px">YoY +26.1%</div></div>
+    <div class="metric-card"><div class="label">영업이익률</div><div class="value purple">51.4%</div><div style="font-size:11px;color:#8b5cf6;margin-top:4px">전 섹터 최상위</div></div>
+    <div class="metric-card"><div class="label">중장기 가이던스(2028)</div><div class="value green">9,000억</div><div style="font-size:11px;color:#27ae60;margin-top:4px">북미/신흥국 성과</div></div>
+    <div class="metric-card"><div class="label">현재 주가 (고점 대비)</div><div class="value red">-25%</div><div style="font-size:11px;color:#e74c3c;margin-top:4px">~265,000원 (고점 ~360,000)</div></div>
+    <div class="metric-card"><div class="label">증권사 평균 목표가</div><div class="value orange">~385,000원</div><div style="font-size:11px;color:#e67e22;margin-top:4px">업사이드 약 +45%</div></div>
   </div>
 
-  <!-- Roadmap -->
-  <h2>📅 글로벌 진출 및 파이프라인 로드맵</h2>
-  <div class="roadmap">
-    <div class="roadmap-step">
-      <div class="year">2025.2H</div>
-      <div class="event">중국, 미국 추가 선적<br>브라질 신규 선적 개시<br><strong>글로벌 영토 확장</strong></div>
-    </div>
-    <div class="roadmap-step">
-      <div class="year">2026.1Q</div>
-      <div class="event">25Q4 <strong>어닝 서프라이즈</strong><br>미국 직판 가시화에 따른<br>성장 동력 재점화</div>
-    </div>
-    <div class="roadmap-step">
-      <div class="year">2026.2Q</div>
-      <div class="event">세포외기질(ECM) 기반<br><strong>셀르디엠(CellREDM)</strong><br>국내 분배 시작 및 스킨부스터 진출</div>
-    </div>
-    <div class="roadmap-step">
-      <div class="year">2028</div>
-      <div class="event">연간 매출액<br><strong>9,000억 원</strong> 달성<br>글로벌 에스테틱 Top-tier</div>
-    </div>
-  </div>
-
-  <!-- Matrix Evaluation -->
-  <h2>📋 [1단계] 쥬라기 매트릭스 3축 평가</h2>
+  <h2>📋 [1단계] 쥬라기 매트릭스 평가</h2>
   <table>
     <tr><th>평가 축</th><th>판정</th><th>근거</th></tr>
-    <tr>
-      <td><strong>재료의 연속성</strong></td>
-      <td style="color:#22c55e;font-weight:700">✅ 장기 확실</td>
-      <td>글로벌 안티에이징 및 미용 시술 수요는 경기 방어적 성격을 띠며 구조적 성장 중. 특히 스킨부스터 등 시술 다각화로 수요층 확대 중.</td>
-    </tr>
-    <tr>
-      <td><strong>펀더멘탈(실체)</strong></td>
-      <td style="color:#22c55e;font-weight:700">✅ 최상급</td>
-      <td>25년 4분기 매출 1,191억(+21.3% YoY), 영업이익 586억(+26.1% YoY) 등 실질적인 숫자로 증명. 매출총이익률(GPM) 78% 이상의 독보적 지위.</td>
-    </tr>
-    <tr>
-      <td><strong>시장 관심도</strong></td>
-      <td style="color:#f97316;font-weight:700">△ 안정적 유지</td>
-      <td>바이오/의료기기 섹터 내 주도주로, 테마성 급등락보다는 실적 발표 및 분기별 선적 데이터에 기반해 우상향하는 '외국인/기관' 선호 수급 형태.</td>
-    </tr>
+    <tr><td><strong>재료의 연속성</strong></td><td style="color:#27ae60;font-weight:700">✅ 매우 강력</td><td>글로벌 안티에이징 시술 수요 증가. 미국 톡신 매출 본격화 및 세포외기질(ECM) 기반 스킨부스터 진출</td></tr>
+    <tr><td><strong>펀더멘탈(실체)</strong></td><td style="color:#27ae60;font-weight:700">✅ 최상급</td><td>매출총이익률(GPM) 78.6%, 영업이익률 51.4%. 현금 창출 능력이 극대화된 에스테틱 캐시카우</td></tr>
+    <tr><td><strong>시장 관심도</strong></td><td style="color:#e67e22">△ 점진적 회복</td><td>작년 하반기 단기 실적 우려로 관심 축소되었으나, 최근 북미 직판 성공 스토리가 알려지며 외인/기관 수급 유입 중</td></tr>
   </table>
 
-  <!-- Chart Analysis -->
-  <h2>📊 기술적 분석 (차트 추이 및 모멘텀)</h2>
-  <div class="alert alert-yellow">
-    <strong>📌 차트 인사이트: 25년 11월 바닥 확인 후 완연한 회복세</strong><br>
-    - <strong>고점 형성</strong>: 25년 8월, 36만 원대 고점 형성 후 시장 조정과 3분기 일시적 이익률 하락(영업익 -11%)으로 급조정.<br>
-    - <strong>바닥 확인</strong>: 25년 11월 ~ 12월 구간에서 21~22만 원대 다중 바닥 형성 및 자사주 처분 등 주주가치 제고 노력.<br>
-    - <strong>추세 전환</strong>: 26년 2월 호실적 발표(영업익 +26%)를 기점으로 V자 반등을 시도하여 26년 4월 현재 <strong>26~27만 원대 레벨업</strong> 안착 중.
+  <div class="alert alert-purple">
+    <strong>💡 곰섹터 판단 핵심 논리</strong><br>
+    클래시스, 파마리서치와 동일한 궤적의 <strong>이익률 50%대 뷰티 곰섹터</strong>입니다.<br>
+    작년 하반기 단기 영업익 하락(-11%)으로 주가가 공포에 휩싸였으나, 곧바로 4분기에 사상 최대 수준 실적(+26%)을 내며 펀더멘탈이 훼손되지 않았음을 증명했습니다. 돈은 잘 버는데 아직 전고점을 회복하지 못해 모아갈 자리가 충분한 곰입니다.
   </div>
 
-  <!-- Recent Disclosures & Earnings -->
-  <h2>💼 핵심 실적 및 공시 하이라이트</h2>
+  <h2>🔍 [2단계] 섹터 분류</h2>
   <table>
-    <tr><th>발표일</th><th>이벤트</th><th>상세 내용</th></tr>
-    <tr>
-      <td>2026.04.01</td>
-      <td>신규 파이프라인</td>
-      <td>세포외기질(ECM) 기반 '셀르디엠' 국내 분배 계약 (스킨부스터 시장 본격 진출)</td>
-    </tr>
-    <tr>
-      <td>2026.02.11</td>
-      <td><strong>25Q4 실적 발표</strong></td>
-      <td>매출 1,191.31억(+21%), 영업이익 586.18억(+26%). 고환율 및 직판 호조 효과.</td>
-    </tr>
-    <tr>
-      <td>2026.01.22</td>
-      <td>중장기 가이던스</td>
-      <td>2028년 연간 매출액 9,000억 원 비전 선포</td>
-    </tr>
-    <tr>
-      <td>2025.11.04</td>
-      <td>25Q3 실적 발표</td>
-      <td>매출 1,058.98억(+0.7%), 영업이익 474.02억(-11%). (단기 실적 저점 통과)</td>
-    </tr>
+    <tr><th>구분</th><th>내용</th></tr>
+    <tr><td><strong>최종 분류</strong></td><td style="color:#8b5cf6;font-weight:700;font-size:16px">🐻 곰 섹터 (우량주)</td></tr>
+    <tr><td>연속성</td><td>✅ 보툴렉스, 더채움, 웰라쥬 등 포트폴리오 다변화 성공</td></tr>
+    <tr><td>펀더멘탈</td><td>✅ 분기 영업이익률 50% 유지, 28년 9,000억 매출 로드맵</td></tr>
+    <tr><td>시장 관심도</td><td>△ 최근 리뉴얼 및 직판 성공으로 관심 점증</td></tr>
+    <tr><td>기본 스탠스</td><td style="color:#8b5cf6;font-weight:700">과매도 진정 후 C 국면 진입 시 적극 '모아가기'</td></tr>
   </table>
 
-  <!-- Target Price -->
-  <h2>🎯 증권사 투자의견 및 목표가 컨센서스</h2>
-  <div class="stock-grid">
-    <div class="stock-card tier-1">
-      <div class="s-tier">다올투자증권</div>
-      <div class="s-name">BUY / 410,000원</div>
-      <div class="s-code">2026.02.12 상향</div>
-      <div class="s-reason">
-        가장 공격적인 목표가 제시. 북미 직판 성공 및 마진율 상승 사이클을 가장 높게 평가하며 기존 36만 원에서 41만 원으로 대폭 상향 조정.
-      </div>
-      <div class="s-keyword">
-        <span class="kw kw-green">목표가 상향</span>
-        <span class="kw">탑픽 의견</span>
-      </div>
-    </div>
-    <div class="stock-card tier-1">
-      <div class="s-tier">키움증권</div>
-      <div class="s-name">BUY / 360,000원</div>
-      <div class="s-code">2026.04.03 상향</div>
-      <div class="s-reason">
-        높은 수익성 기록과 하반기 중국, 미국, 브라질 중심의 선적 추이 유지 전망. (기존 34만 원 → 36만 원 상향) 중소형주 포트폴리오 지속 편입.
-      </div>
-      <div class="s-keyword">
-        <span class="kw kw-green">목표가 상향</span>
-        <span class="kw">수익성 방어</span>
-      </div>
-    </div>
+  <h2>📈 [3단계] 생애 주기 판별</h2>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot dot-green"></div><div class="timeline-text"><strong>[A 국면]</strong> 2025.08 — 최고가 기록 (~360,000원). K-뷰티 수출 호조에 따른 단기 고점 형성</div></div>
+    <div class="timeline-item"><div class="timeline-dot dot-red"></div><div class="timeline-text"><strong>[B 국면 진입]</strong> 2025.11 — 3분기 실적 둔화 및 시장 조정 여파로 21만원 대까지 급락. <strong>과매도 하락 조정 구간</strong></div></div>
+    <div class="timeline-item"><div class="timeline-dot dot-blue"></div><div class="timeline-text"><strong>[C 국면 시동]</strong> 2026.01 ~ 02 — 북미 매출 확대 기대감 및 4분기 어닝 서프라이즈(영업익 +26%)로 바닥 탈출</div></div>
+    <div class="timeline-item"><div class="timeline-dot dot-blue"></div><div class="timeline-text"><strong>[현재]</strong> C 국면. 급락에 따른 매물대를 소화하며 <strong>26~27만원 대에서 우상향 횡보/추세 형성 중</strong></div></div>
   </div>
 
-  <!-- Strategy Summary -->
-  <div class="strategy-box">
-    <div class="s-title">🎯 주주총 핵심 매매 전략 (Bear Sector Accumulation)</div>
-    <table style="margin:0">
-      <tr>
-        <th>전략</th><th>내용</th>
-      </tr>
-      <tr>
-        <td><strong>진입 타점</strong></td>
-        <td>현재가 260,000원 대역. 단기 급등에 따른 피로감이 보일 시 <strong>245,000원 ~ 250,000원 눌림목</strong>에서 분할 매수.</td>
-      </tr>
-      <tr>
-        <td><strong>투자 관점</strong></td>
-        <td><strong>중장기 가치주 (Bear) 관점</strong>. 테마주처럼 단기 펌핑을 노리기보다는, 분기별 수출 데이터(관세청) 확인하며 비중을 늘려가는 우상향 펀더멘탈 투자.</td>
-      </tr>
-      <tr>
-        <td><strong>1차 목표가</strong></td>
-        <td><strong>320,000원</strong> (차트상 전고점 저항대 도달 시 비중 30% 축소)</td>
-      </tr>
-      <tr>
-        <td><strong>2차 목표가</strong></td>
-        <td><strong>380,000원</strong> (증권사 평균 목표가 근접 시, 2026년 미국 직판 점유율 폭발 시 도달 가능)</td>
-      </tr>
-      <tr>
-        <td><strong>리스크 요인</strong></td>
-        <td>보툴리눔 톡신 균주 관련 소송 노이즈 재발발 가능성, 미국 현지 에스테틱 시장 소비 둔화 우려.</td>
-      </tr>
-    </table>
+  <div class="alert alert-yellow">
+    <strong>📌 오류 정정 및 관찰 포인트</strong><br>
+    기존 분석에서 본 종목을 이미 급등이 완료된 D 국면으로 오해할 소지가 있었으나, 쥬라기 생애 주기로 재분석한 결과 <strong>25년 하반기 강력한 B 국면(조정)을 거쳐 이제 막 C 국면(추세 반등)으로 접어든 상태</strong>입니다. 따라서 '피날레 청산'이 아닌 <strong>'모아가기'</strong>가 적합한 단계입니다.
   </div>
 
+  <h2>💡 [전략] 매매 기법 — 모아가기</h2>
+  <table>
+    <tr><th>구분</th><th>가격대</th><th>내용</th></tr>
+    <tr><td><strong>매수 구간</strong></td><td>245,000~250,000원</td><td>단기 반등에 따른 눌림목(5일선 변곡) 발생 시 분할 매수</td></tr>
+    <tr><td><strong>불타기(추가)</strong></td><td>275,000원 돌파 시</td><td>C 국면 박스권 상단 돌파 시 추세 추종 합류</td></tr>
+    <tr><td><strong>목표 청산</strong></td><td>320,000~360,000원</td><td>전고점 도달 시 일부 청산 (이후 D 국면 돌입 판단)</td></tr>
+    <tr><td><strong>손절 기준</strong></td><td>210,000원 이탈</td><td>B 국면의 최저점 붕괴 시 즉각 이탈 (대형 악재 발생 의미)</td></tr>
+  </table>
+
+  <div class="condition-box">
+    <strong>✅ 투자 지속 체크리스트</strong>
+    <ul>
+      <li>세포외기질(ECM) 기반 '셀르디엠' 국내 시장 점유율 속도 (26년 하반기 확인)</li>
+      <li>미국 직판 채널 및 파트너십을 통한 보툴리눔 톡신 매출 추이</li>
+      <li>신흥국(중국, 브라질) 선적 데이터 (관세청 수출입 데이터 매월 확인)</li>
+      <li>영업이익률 50% 유지 여부 (마진 압박이 생길 경우 곰섹터 매력 감소)</li>
+    </ul>
+  </div>
+
+  <h2>🏦 증권사 투자의견 현황</h2>
+  <table>
+    <tr><th>증권사</th><th>의견</th><th>목표주가</th><th>특이사항</th></tr>
+    <tr><td>다올투자증권</td><td>BUY</td><td>410,000원</td><td>(02.12 상향) 마진 상승 사이클, 탑픽 의견</td></tr>
+    <tr><td>키움증권</td><td>BUY</td><td>360,000원</td><td>(04.03 상향) 중소형주 포트폴리오 편입, 하반기 추가 선적 기대</td></tr>
+    <tr><td>DB증권</td><td>BUY</td><td>340,000원</td><td>안정적인 실적 고도화 평가</td></tr>
+  </table>
   <div class="alert alert-green">
-    <strong>💡 주주총 최종 인사이트</strong><br>
-    휴젤은 더 이상 내수 중심의 뷰티 기업이 아닙니다. 이익률 50%를 상회하는 압도적인 마진 구조에, 가장 진입 장벽이 높은 미국 시장에서 직판 체제를 성공적으로 구축해 나가고 있는 <strong>글로벌 바이오 에스테틱 맹수(Bear)</strong>입니다.<br><br>
-    작년 하반기의 주가 하락은 일시적인 마진 축소 우려와 시장 수급의 이탈이었으나, 올해 1분기 호실적으로 펀더멘탈이 전혀 훼손되지 않았음을 증명했습니다. 증권사들이 연이어 목표가를 36~41만 원으로 상향하는 것은 2028년 9,000억 매출 목표의 가시성이 높아졌기 때문입니다. 단기 등락에 연연하지 말고 시장 하락 시 모아가는 정석적인 투자가 요구됩니다.
+    최근 증권사들은 일제히 <strong>목표주가를 36만~41만 원으로 상향</strong>하고 있습니다. C 국면에서 펀더멘탈의 체력이 확인되면서, 기관의 추가 매수세가 붙을 가능성이 높습니다.
   </div>
 
   <div class="footer">
-    주주총 2026 투자 전략 시스템 | 휴젤(145020) 뷰티 메디컬 섹터 분석 | 생성: 2026-05-06<br>
-    ⚠️ 본 리포트는 투자 참고용입니다. 최종 결정은 본인의 판단과 책임하에 이루어져야 합니다.
+    본 리포트는 투자 참고용입니다. 최종 매매 결정은 반드시 본인의 판단과 책임하에 이루어져야 합니다.<br>
+    생성: 2026-05-06 | 적용 프레임워크: 주주총 쥬라기 매트릭스 & 생애 주기 분석
   </div>
 </div>
 </body>
